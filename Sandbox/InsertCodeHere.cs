@@ -40,6 +40,17 @@ namespace Sandbox
 
             Console.WriteLine("Hello world!");
 
+
+            List<Book> myBookList = new List<Book>(){ new Book("Pascal book", "121331", "Peter Pascal"), new Book("C++ book", "121331", "Peter Plus") };
+
+            Book aBook = new Book("C# programming", "1212132", "John Sharp");
+
+            myBookList.Add(aBook);
+            myBookList.Add(new Book("Scrum book", "121331", "Peter Scrum"));
+
+
+            
+
             // The LAST line of code should be ABOVE this line
         }
     }
