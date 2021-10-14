@@ -3,55 +3,61 @@ using System.Collections.Generic;
 
 namespace Sandbox
 {
+    public enum FruitType { Apple, Pear, Cherry, Banana, Kiwi }
     public class InsertCodeHere
     {
         public void MyCode()
         {
             // The FIRST line of code should be BELOW this line
 
-            List<int> myFirstList = new List<int>();
-            myFirstList.Add(123);
-            myFirstList.Add(124);//tilføjer i slutning af listen
-            myFirstList.Insert(1, 125); //indsætter på en specifik position, de andre rykkes
-            myFirstList[1] = 126; //overskriver
-            myFirstList.Add(128);
-            myFirstList.Add(129);
+            //List<int> myFirstList = new List<int>();
+            //myFirstList.Add(123);
+            //myFirstList.Add(124);//tilføjer i slutning af listen
+            //myFirstList.Insert(1, 125); //indsætter på en specifik position, de andre rykkes
+            //myFirstList[1] = 126; //overskriver
+            //myFirstList.Add(128);
+            //myFirstList.Add(129);
 
-            myFirstList.RemoveAt(2);
+            //myFirstList.RemoveAt(2);
 
-            bool removed = myFirstList.Remove(126);
-            Console.WriteLine($"Fik fjernet 126 {removed}");
-            Console.WriteLine(myFirstList[1]);
+            //bool removed = myFirstList.Remove(126);
+            //Console.WriteLine($"Fik fjernet 126 {removed}");
+            //Console.WriteLine(myFirstList[1]);
 
-            Console.WriteLine("Udskrivning af liste vha foreach");
-            foreach (int i in myFirstList)
-            {
-                Console.WriteLine(i);
-            }
+            //Console.WriteLine("Udskrivning af liste vha foreach");
+            //foreach (int i in myFirstList)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
-            Console.WriteLine("Udskrivning af liste vha while");
-            int j = 0;
-            while (j < myFirstList.Count)
-            {
-                Console.WriteLine(myFirstList[j]);
-                j++;
-            }
+            //Console.WriteLine("Udskrivning af liste vha while");
+            //int j = 0;
+            //while (j < myFirstList.Count)
+            //{
+            //    Console.WriteLine(myFirstList[j]);
+            //    j++;
+            //}
 
-            
+
 
 
 
             //Console.WriteLine("Hello world!");
 
 
-            //List<Book> myBookList = new List<Book>(){ new Book("Pascal book", "121331", "Peter Pascal"), new Book("C++ book", "121331", "Peter Plus") };
+            List<Book> myBookList = new List<Book>(){ new Book("Pascal book", "121331", "Peter Pascal", GenreType.Fantasy), new Book("C++ book", "121331", "Peter Plus", GenreType.Thriller) };
 
-            //Book aBook = new Book("C# programming", "1212132", "John Sharp");
+            Book aBook = new Book("C# programming", "1212132", "John Sharp", GenreType.Thriller);
 
             //myBookList.Add(aBook);
-            //myBookList.Add(new Book("Scrum book", "121331", "Peter Scrum"));
+            myBookList.Add(new Book("Scrum book", "121331", "Peter Scrum", GenreType.Fantasy));
 
-            //List<string> names = new List<string>() {"Mikkel", "Emil"};
+            foreach (Book book in myBookList)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
+            List<string> names = new List<string>() {"Mikkel", "Emil"};
             //names.Add("Hannibal");
             //names.Insert(1, "Poul");
 
@@ -133,7 +139,16 @@ namespace Sandbox
                 Console.WriteLine("Der findes ikke en med key mikkel");
             }
 
-            // The LAST line of code should be ABOVE this line
-        }
+            // A fruit class could contain
+            
+
+            // using enumerations
+            FruitType aFruit = FruitType.Apple;
+            //you allways assign legal values
+
+
+
+        // The LAST line of code should be ABOVE this line
     }
+}
 }
