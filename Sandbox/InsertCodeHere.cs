@@ -9,33 +9,36 @@ namespace Sandbox
         {
             // The FIRST line of code should be BELOW this line
 
-            //List<int> myFirstList = new List<int>();
-            //myFirstList.Add(123);
-            //myFirstList.Add(124);//tilføjer i slutning af listen
-            //myFirstList.Insert(1,125); //indsætter på en specifik position, de andre rykkes
-            //myFirstList[1] = 126; //overskriver
-            //myFirstList.Add(128);
-            //myFirstList.Add(129);
-           
-            //myFirstList.RemoveAt(2);
+            List<int> myFirstList = new List<int>();
+            myFirstList.Add(123);
+            myFirstList.Add(124);//tilføjer i slutning af listen
+            myFirstList.Insert(1, 125); //indsætter på en specifik position, de andre rykkes
+            myFirstList[1] = 126; //overskriver
+            myFirstList.Add(128);
+            myFirstList.Add(129);
 
-            //bool removed = myFirstList.Remove(126);
-            //Console.WriteLine($"Fik fjernet 126 {removed}");
-            //Console.WriteLine(myFirstList[1]);
+            myFirstList.RemoveAt(2);
 
-            //Console.WriteLine("Udskrivning af liste vha foreach");
-            //foreach (int i in myFirstList)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            bool removed = myFirstList.Remove(126);
+            Console.WriteLine($"Fik fjernet 126 {removed}");
+            Console.WriteLine(myFirstList[1]);
 
-            //Console.WriteLine("Udskrivning af liste vha while");
-            //int j = 0;
-            //while (j <myFirstList.Count)
-            //{
-            //    Console.WriteLine( myFirstList[j] );
-            //    j++;
-            //}
+            Console.WriteLine("Udskrivning af liste vha foreach");
+            foreach (int i in myFirstList)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine("Udskrivning af liste vha while");
+            int j = 0;
+            while (j < myFirstList.Count)
+            {
+                Console.WriteLine(myFirstList[j]);
+                j++;
+            }
+
+            
+
 
 
             //Console.WriteLine("Hello world!");
@@ -73,10 +76,11 @@ namespace Sandbox
             players.Add(p2.Id, p2);
             players.Add(3, new Player(3, "Hannibal", "Alleen 5"));
 
-            Console.WriteLine("Udskrevet key value pair");
+            Console.WriteLine("Udskrevet key ");
             foreach (var playerKeyValue in players)
             {
-                Console.WriteLine(playerKeyValue.ToString());
+                //Console.WriteLine(playerKeyValue.ToString());
+                Console.WriteLine(playerKeyValue.Key);
             }
 
             Console.WriteLine("Udskrift af values");
@@ -114,6 +118,21 @@ namespace Sandbox
             {
                 Console.WriteLine("Player med key 5 kunne ikke fjernes");
             }
+
+            Dictionary<string, Player> dictionaryByName = new Dictionary<string, Player>();
+            dictionaryByName.Add(p1.Name, p1);
+            dictionaryByName.Add(p2.Name, p2);
+            Console.WriteLine("Udskrevet mikkel fra dictionaryByName");
+            if (dictionaryByName.ContainsKey("mikkel"))
+            {
+                Player p6 = dictionaryByName["mikkel"];
+                Console.WriteLine(p6.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Der findes ikke en med key mikkel");
+            }
+
             // The LAST line of code should be ABOVE this line
         }
     }
